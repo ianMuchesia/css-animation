@@ -12,5 +12,26 @@ img{
  /* transform:translate(-200px, -50px);/*move object*/
  /* transform: scaleX(0.5);/*shrink or expand an object*/
   /*transform:rotateZ(-135deg); a good visyual way for rotation Y and X works too*/
-  transform: rotateZ(180deg) translate(50px, -50px) scale(2.0)
+  /*/transform: rotateZ(-180deg) translate(50px, -50px) scale(1.1);*/
+}
+.circle{
+  width: 100px;
+  padding: 50px 0;
+  line-height: 0;
+  margin: 60px auto;
+  background: pink;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+    /*css transition*/
+  /*transition: background 1s; applies to background only*/
+  /*transition:1s;*/
+  /*transition: background 1s, transform 0.5s 1s;/*1s is the delay*/
+  transition: background 1s, transform 1s 
+  0.2s ease-in-out; /*constant*/
+
+}
+.circle:hover{
+  background: salmon;
+  transform: rotate(360deg);
 }
