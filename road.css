@@ -22,7 +22,7 @@ body {
   height: 30%;
   background: dimgrey;
   box-sizing: border-box;
-  border-top:  10px solid grey;
+  border-top: 10px solid grey;
   border-bottom: 10px solid grey;
   width: 100%;
 }
@@ -37,38 +37,75 @@ body {
 }
 
 /*ELEMENTS TO ANIMATE*/
-.car{
-    position: absolute;
-    top:-60px;
-    left:0px;
-   /* animation: drive 2s linear infinite;*/
-    animation-name: drive;
+.car {
+  position: absolute;
+  top: -60px;
+  left: 0px;
+  /* animation: drive 2s linear infinite;*/
+  animation: drive 3s both 2s infinite linear, jump 0.3s 1.2s ease;
+
+  /*
+   animation-name: drive;
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-delay: 2s;
     animation-iteration-count: infinite;
-    
-
+    animation-timing-function: cubic-bezier(.9,.24,.34,1.02);/*can also be linera, and ease*/
 }
-.car2{
+.car2 {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  height: 90px;
+  /*transform: scaleX(-1);/*to flip an image*/
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 
-    position: absolute;
-    top:90px;
-    left:0;
-    height:90px;
-    /*transform: scaleX(-1);/*to flip an image*/
-    animation-name:drive;
-    animation-duration: 5s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
+.cloud {
+  position: absolute;
+}
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top: 0;
+
+  animation: wind 50s linear infinite reverse;
 }
 /*KEYFRAMES*/
-@keyframes drive{
-    from{
-        transform:translateX(-110px) 
-    }
-    to{
-        transform:translateX(1000px) 
-    }
+@keyframes drive {
+  from {
+    transform: translateX(-110px);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+@keyframes wind {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes jump {
+  0% {
+    top: -60px;
+  }
+  50% {
+    top: 100px;
+  }
+  100% {
+    top: -40px;
+  }
 }
