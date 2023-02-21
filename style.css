@@ -1,0 +1,16 @@
+body{
+  background: lightblue;
+  text-align: center;
+}
+.wrapper{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+img{
+ /* transform:translate(-200px, -50px);/*move object*/
+ /* transform: scaleX(0.5);/*shrink or expand an object*/
+  /*transform:rotateZ(-135deg); a good visyual way for rotation Y and X works too*/
+  transform: rotateZ(180deg) translate(50px, -50px) scale(2.0)
+}
